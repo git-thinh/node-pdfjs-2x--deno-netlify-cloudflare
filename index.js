@@ -1,2 +1,2 @@
 
-export { getDocument, LoopbackPort, PDFDataRangeTransport, PDFWorker } from './lib/pdf.js'; //./pdfjs/src/pdf.js
+export { getDocument, LoopbackPort, PDFDataRangeTransport, PDFWorker } from './pdfjs/src/pdf.js'; //./pdfjs/src/pdf.js | ./lib/pdf.js
