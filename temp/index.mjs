@@ -124,7 +124,7 @@ var URL_1;
 const IDENTITY_MATRIX = [1, 0, 0, 1, 0, 0];
 const FONT_IDENTITY_MATRIX = [0.001, 0, 0, 0.001, 0, 0];
 
-const NativeImageDecoding = {
+const NativeImageDecoding$1 = {
   NONE: 'none',
   DECODE: 'decode',
   DISPLAY: 'display',
@@ -1128,7 +1128,7 @@ var util = /*#__PURE__*/Object.freeze({
 	InvalidPDFException: InvalidPDFException,
 	MissingDataException: MissingDataException,
 	MissingPDFException: MissingPDFException,
-	NativeImageDecoding: NativeImageDecoding,
+	NativeImageDecoding: NativeImageDecoding$1,
 	PasswordException: PasswordException,
 	PasswordResponses: PasswordResponses,
 	PermissionFlag: PermissionFlag,
@@ -6546,12 +6546,12 @@ function getDocument$1(src) {
   params.ignoreErrors = params.stopAtErrors !== true;
   params.pdfBug = params.pdfBug === true;
 
-  const NativeImageDecoderValues = Object.values(NativeImageDecoding);
+  const NativeImageDecoderValues = Object.values(NativeImageDecoding$1);
   if (params.nativeImageDecoderSupport === undefined ||
       !NativeImageDecoderValues.includes(params.nativeImageDecoderSupport)) {
     params.nativeImageDecoderSupport =
       (apiCompatibilityParams.nativeImageDecoderSupport ||
-       NativeImageDecoding.DECODE);
+       NativeImageDecoding$1.DECODE);
   }
   if (!Number.isInteger(params.maxImageSize)) {
     params.maxImageSize = -1;
@@ -10648,7 +10648,7 @@ var require$$4 = /*@__PURE__*/getAugmentedNamespace(dom_utils);
  * limitations under the License.
  */
 
-var SVGGraphics = function() {
+var SVGGraphics$1 = function() {
   throw new Error('Not implemented: SVGGraphics');
 };
 
@@ -10933,7 +10933,7 @@ var SVGExtraState = (function SVGExtraStateClosure() {
   return SVGExtraState;
 })();
 
-SVGGraphics = (function SVGGraphicsClosure() {
+SVGGraphics$1 = (function SVGGraphicsClosure() {
   function opListToTree(opList) {
     var opTree = [];
     var tmp = [];
@@ -11959,7 +11959,7 @@ SVGGraphics = (function SVGGraphicsClosure() {
 
 var svg = /*#__PURE__*/Object.freeze({
 	__proto__: null,
-	get SVGGraphics () { return SVGGraphics; }
+	get SVGGraphics () { return SVGGraphics$1; }
 });
 
 var require$$5 = /*@__PURE__*/getAugmentedNamespace(svg);
@@ -12557,8 +12557,8 @@ pdfjsSharedUtil.createPromiseCapability;
 pdfjsSharedUtil.PasswordResponses;
 pdfjsSharedUtil.InvalidPDFException;
 pdfjsSharedUtil.MissingPDFException;
-pdfjsDisplaySVG.SVGGraphics;
-pdfjsSharedUtil.NativeImageDecoding;
+var SVGGraphics = pdfjsDisplaySVG.SVGGraphics;
+var NativeImageDecoding = pdfjsSharedUtil.NativeImageDecoding;
 pdfjsSharedUtil.CMapCompressionType;
 pdfjsSharedUtil.PermissionFlag;
 pdfjsSharedUtil.UnexpectedResponseException;
@@ -12579,5 +12579,5 @@ pdfjsDisplayDOMUtils.addLinkAttributes;
 pdfjsDisplayDOMUtils.loadScript;
 pdfjsDisplayWorkerOptions.GlobalWorkerOptions;
 
-export { LoopbackPort, PDFDataRangeTransport, PDFWorker, getDocument };
+export { LoopbackPort, NativeImageDecoding, PDFDataRangeTransport, PDFWorker, SVGGraphics, getDocument };
 //# sourceMappingURL=index.mjs.map
